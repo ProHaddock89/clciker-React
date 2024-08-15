@@ -1,17 +1,17 @@
 import Counter from "../Counter/Counter"
-
+import { useState } from "react";
 function Clicker () {
-    let Points = 0;
+    const [numClick, setNumClick] = useState(0)
     const addPoint = ()=> {
-        Points+=1
-        console.log(Points)
+        setNumClick(setNumClick+1)
+        // console.log(Points)
     }
   return (
     <>
 <div>
     <input type="button" onClick={addPoint} value="hi"></input>
 </div>
-<Counter Clicks={Points} />
+<Counter Clicks={numClick} />
 </>
   );
 }
